@@ -91,9 +91,14 @@ const Homepage = () => {
 					<div className="homepage-container">
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
-								</div>
+							<div className="title homepage-title">
+  {INFO.homepage.title.split("\n").map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      {index < INFO.homepage.title.split("\n").length - 1 && <br />}
+    </React.Fragment>
+  ))}
+</div>
 
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
